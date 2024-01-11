@@ -2,6 +2,11 @@
 
 El programa actúa como una interfaz entre C y ensamblador para obtener cotizaciones de criptomonedas y conversiones de divisas. Utiliza las APIs CoinLayer y Fixer para obtener información en tiempo real sobre las cotizaciones de Bitcoin (BTC) y Ethereum (ETH) en Dólares Estadounidenses (USD), así como el cambio de valor entre Dólar Estadounidense (USD) y Pesos Argentinos (ARS) y Euros (EUR).
 
+### Autores:
+- **Bottini, Franco Nicolas**
+- **Robledo, Valentin**
+- **Lencina, Aquiles Benjamín**
+
 ### **¿Cómo usar?**
 Puede clonar y compilar este repositorio siguiendo estos pasos:
 
