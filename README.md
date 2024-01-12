@@ -21,6 +21,9 @@ Finalmente, para ejecutar el programa:
 $ ./bin/TP2
 ```
 
+>[!NOTE]
+> Para poder utilizar las APIs, es necesario contar con una clave de acceso. en el archivo `include/main.h` debe modificar el valor de la variable `const char *coinlayer_path = "/live?access_key=TU_CLAVE";`.
+
 ### **Resumen del Funcionamiento**
 Para el desarrollo de este programa se utilizaron las siguientes APIs:
 
@@ -31,6 +34,3 @@ La primera utilizada para obtener la cotización de las criptomonedas Bitcoin (B
 
 Al iniciar el programa, se realiza una consulta a las APIs, las cuales nos devuelven la información en formato JSON, posteriormente, extraemos los datos necesarios y los guardamos en estructuras.  
 Luego, realizamos un par de llamadas a una función en assembler, la cual recibe como parámetro la cotización de la criptomoneda en Dólares Estadounidenses (USD) y el factor de conversión a la moneda deseada. Esta función, realiza la conversión de divisas y devuelve el resultado. De esta manera, obtenemos la cotización de Bitcoin (BTC) y Ethereum (ETH) en Pesos Argentinos (ARS) y Euros (EUR).
-
->[!NOTE]
-> Para poder utilizar las APIs, es necesario contar con una clave de acceso. en el archivo `include/main.h` debe modificar el valor de la variable `const char *coinlayer_path = "/live?access_key=TU_CLAVE";`.
