@@ -1,14 +1,14 @@
-# Interfaz entre C y Assembler
+# C and Assembly Interface
 
-El programa actúa como una interfaz entre C y ensamblador para obtener cotizaciones de criptomonedas y conversiones de divisas. Utiliza las APIs CoinLayer y Fixer para obtener información en tiempo real sobre las cotizaciones de Bitcoin (BTC) y Ethereum (ETH) en Dólares Estadounidenses (USD), así como el cambio de valor entre Dólar Estadounidense (USD) y Pesos Argentinos (ARS) y Euros (EUR).
+This program serves as an interface between C and Assembly to retrieve cryptocurrency quotes and currency conversions. It uses the CoinLayer and Fixer APIs to obtain real-time data on Bitcoin (BTC) and Ethereum (ETH) quotes in United States Dollars (USD), as well as exchange rates between USD and Argentine Pesos (ARS) and Euros (EUR).
 
-### Autores:
-- **Bottini, Franco Nicolas**
-- **Robledo, Valentin**
-- **Lencina, Aquiles Benjamín**
+### Authors:
+- **Franco Nicolas Bottini**
+- **Valentin Robledo**
+- **Aquiles Benjamín Lencina**
 
-### **¿Cómo usar?**
-Puede clonar y compilar este repositorio siguiendo estos pasos:
+### **How to Use**
+Clone and compile this repository by following these steps:
 
 ```bash
 $ git clone https://github.com/francobottini99/PR-INTFCASM-2023.git
@@ -20,22 +20,22 @@ $ cmake .
 $ make
 ```
 
-Finalmente, para ejecutar el programa:
+Finally, to run the program:
 
 ```bash
 $ ./bin/TP2
 ```
 
 >[!NOTE]
-> Para poder utilizar las APIs, es necesario contar con una clave de acceso. en el archivo `include/main.h` debe modificar el valor de la variable `const char *coinlayer_path = "/live?access_key=TU_CLAVE";`.
+> To use the APIs, an access key is required. In the file `include/main.h`, modify the value of the variable `const char *coinlayer_path = "/live?access_key=YOUR_KEY";`.
 
-### **Resumen del Funcionamiento**
-Para el desarrollo de este programa se utilizaron las siguientes APIs:
+### **Functionality Overview**
+The following APIs are used in this program:
 
 * [CoinLayer](https://coinlayer.com/)
 * [Fixer](https://fixer.io/)
 
-La primera utilizada para obtener la cotización de las criptomonedas Bitcoin (BTC) y Ethereum (ETH) en Dólares Estadounidenses (USD) y en tiempo real, la segunda, para obtener el cambio de valor de divisas, de Dólar Estadounidense (USD) a Pesos Argentinos (ARS) y Euros (EUR).  
+CoinLayer is used to retrieve real-time quotes for the cryptocurrencies Bitcoin (BTC) and Ethereum (ETH) in United States Dollars (USD), while Fixer provides currency exchange rates from USD to Argentine Pesos (ARS) and Euros (EUR).
 
-Al iniciar el programa, se realiza una consulta a las APIs, las cuales nos devuelven la información en formato JSON, posteriormente, extraemos los datos necesarios y los guardamos en estructuras.  
-Luego, realizamos un par de llamadas a una función en assembler, la cual recibe como parámetro la cotización de la criptomoneda en Dólares Estadounidenses (USD) y el factor de conversión a la moneda deseada. Esta función, realiza la conversión de divisas y devuelve el resultado. De esta manera, obtenemos la cotización de Bitcoin (BTC) y Ethereum (ETH) en Pesos Argentinos (ARS) y Euros (EUR).
+When the program starts, it makes a request to these APIs, which return information in JSON format. The necessary data is then extracted and stored in data structures.  
+Next, we make a few calls to an assembly function, passing the cryptocurrency quote in USD and the conversion factor to the desired currency as parameters. This function performs the currency conversion and returns the result. In this way, we obtain the Bitcoin (BTC) and Ethereum (ETH) quotes in Argentine Pesos (ARS) and Euros (EUR).
